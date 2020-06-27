@@ -1,4 +1,5 @@
-import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
+import { HEIGHT, WIDTH, board } from "./makeBoard.js";
+import { currPlayer } from "./handleClick";
 
 /** findSpotForCol: given column x, return top empty y (null if filled) */
 

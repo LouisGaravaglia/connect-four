@@ -1,9 +1,9 @@
-import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
+import { HEIGHT, WIDTH, board } from "./makeBoard.js";
 import { findSpotForCol, placeInTable, endGame } from "./utilityFunctions.js";
 import { checkForWin } from "./checkForWin.js";
 
 /** handleClick: handle click of column top to play piece */
-let changePlayer = currPlayer;
+let currPlayer = 1;
 
 const handleClick = (evt) => {
   // get x from ID of clicked cell
@@ -23,7 +23,7 @@ const handleClick = (evt) => {
 
   // check for win
   if (checkForWin()) {
-    return endGame(`Player ${changePlayer} won!`);
+    return endGame(`Player ${currPlayer} won!`);
   }
 
   // check for tie
@@ -31,12 +31,12 @@ const handleClick = (evt) => {
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
-  if (changePlayer === 1) changePlayer = 2;
-  else if (changePlayer === 2) changePlayer = 1;
+  if (currPlayer === 1) currPlayer = 2;
+  else if (currPlayer === 2) currPlayer = 1;
 
-  console.log(changePlayer);
-  // console.log("this is change player " changePlayer);
+  console.log(currPlayer);
+  // console.log("this is change player " currPlayer);
   // console.log("this is current player " currPlayer);
 };
 
-export { handleClick };
+export { handleClick, currPlayer };
