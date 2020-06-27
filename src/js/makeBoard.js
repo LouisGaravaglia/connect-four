@@ -1,17 +1,13 @@
 const WIDTH = 7;
 const HEIGHT = 6;
-// active player: 1 or 2
 
-const board = new Array(HEIGHT); // array of rows, each row is array of cells  (board[y][x])
+// - new array for the height length (board[y][x])
+const board = new Array(HEIGHT);
 
-/** makeBoard: create in-JS board structure:
- *    board = array of rows, each row is array of cells  (board[y][x])
- */
-
+// - setting up the 2D array for the board
 const makeBoard = () => {
-  // TODO: set "board" to empty HEIGHT x WIDTH matrix array
-
   for (let i = 0; i < HEIGHT; i++) {
+    //  - new array for the width length (board[y][x])
     board[i] = new Array(WIDTH);
   }
 
@@ -22,6 +18,7 @@ const makeBoard = () => {
   }
 };
 
+// - running the makeBoard function so that makeHtmlBoard function can add rows/columns accordinly
 makeBoard();
-// console.log(board);
+
 export { WIDTH, HEIGHT, board };
