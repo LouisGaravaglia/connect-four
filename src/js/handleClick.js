@@ -1,13 +1,15 @@
 import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
+import { findSpotForCol, placeInTable, endGame } from "./utilityFunctions.js";
+import { checkForWin } from "./checkForWin.js";
 
 /** handleClick: handle click of column top to play piece */
 
 function handleClick(evt) {
   // get x from ID of clicked cell
-  var x = +evt.target.id;
+  const x = +evt.target.id;
 
   // get next spot in column (if none, ignore click)
-  var y = findSpotForCol(x);
+  const y = findSpotForCol(x);
   if (y === null) {
     return;
   }
