@@ -1,8 +1,9 @@
-import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
+import { HEIGHT, WIDTH, board } from "./makeBoard.js";
 import { findSpotForCol, placeInTable, endGame } from "./utilityFunctions.js";
 import { checkForWin } from "./checkForWin.js";
 
 /** handleClick: handle click of column top to play piece */
+let currPlayer = 1;
 
 const handleClick = (evt) => {
   // get x from ID of clicked cell
@@ -27,9 +28,19 @@ const handleClick = (evt) => {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
+  board[0].every(function (val) {
+    if (val === true) {
+      alert("woot woot, no more space!");
+    }
+  });
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
+  currPlayer === 1 ? (currPlayer = 2) : (currPlayer = 1);
+
+  console.log(currPlayer);
+  // console.log("this is change player " currPlayer);
+  // console.log("this is current player " currPlayer);
 };
 
-export { handleClick };
+export { handleClick, currPlayer };

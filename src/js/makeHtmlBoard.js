@@ -1,4 +1,4 @@
-import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard";
+import { HEIGHT, WIDTH, board } from "./makeBoard";
 import { handleClick } from "./handleClick";
 
 function makeHtmlBoard() {

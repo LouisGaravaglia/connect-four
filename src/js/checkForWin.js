@@ -1,4 +1,5 @@
-import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
+import { HEIGHT, WIDTH, board } from "./makeBoard.js";
+import { currPlayer } from "./handleClick";
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
 
