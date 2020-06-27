@@ -1,11 +1,9 @@
 import { HEIGHT, WIDTH, board } from "./makeBoard.js";
 import { currPlayer } from "./handleClick";
 
-/** findSpotForCol: given column x, return top empty y (null if filled) */
-
+//////////////////////////////////////////findSpotForCol: given column x, return top empty y (null if filled)
 const findSpotForCol = (x) => {
-  // TODO: write the real version of this, rather than always returning 0
-
+  // Loop over arrays withing board to find available spot in column
   if (board[5][x] === null) {
     board[5][x] === true;
     return 5;
@@ -29,23 +27,26 @@ const findSpotForCol = (x) => {
   }
 };
 
-/** placeInTable: update DOM to place piece into HTML table of board */
-
+///////////////////////////////////////////placeInTable: update DOM to place piece into HTML table of board
 const placeInTable = (y, x) => {
-  // TODO: make a div and insert into correct table cell
+  // - make a div element to add to the board
   const piece = document.createElement("div");
+  // - add a class of piece to applying styling
   piece.classList.add("piece");
+  // - conditional to check which styling to apply for player1 v player2 styling
   if (currPlayer === 1) piece.classList.add("p1");
+  // - conditional to check which styling to apply for player1 v player2 styling
   else if (currPlayer == 2) piece.classList.add("p2");
+  // - get a hold of the data cell to insert the div/player piece
   const cell = document.getElementById(`${y}-${x}`);
+  // - append that piece inside the cell
   cell.append(piece);
+  // - set the value in the board array to either be 1 or 2 depending on which player played it, this will be intergral in deciding who won
   board[y][x] = currPlayer;
 };
 
-/** endGame: announce game end */
-
+///////////////////////////////////////////END GAME FUNCTION
 const endGame = (msg) => {
-  // TODO: pop up alert message
   alert(msg);
 };
 
