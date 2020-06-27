@@ -46,6 +46,7 @@ const placeInTable = (y, x) => {
 
 const endGame = (msg) => {
   // TODO: pop up alert message
+  alert(msg);
 };
 
 export { findSpotForCol, placeInTable, endGame };
