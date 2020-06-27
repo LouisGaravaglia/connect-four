@@ -1,4 +1,5 @@
-import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
+import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard";
+import { handleClick } from "./handleClick";
 
 function makeHtmlBoard() {
   // - get "htmlBoard" variable from the item in HTML w/ID of "board"
@@ -31,6 +32,7 @@ function makeHtmlBoard() {
       const cell = document.createElement("td");
       // - add an ID of a unique number for each data cell
       cell.setAttribute("id", `${y}-${x}`);
+      // console.log(cell.attr(id));
       // - append those cells to each row
       row.append(cell);
     }
@@ -38,3 +40,5 @@ function makeHtmlBoard() {
     htmlBoard.append(row);
   }
 }
+
+makeHtmlBoard();

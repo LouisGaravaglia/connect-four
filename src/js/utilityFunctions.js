@@ -11,6 +11,12 @@ const findSpotForCol = (x) => {
 
 const placeInTable = (y, x) => {
   // TODO: make a div and insert into correct table cell
+  const piece = document.createElement("div");
+  piece.classList.add("piece");
+  if (currPlayer === 1) piece.classList.add("p1");
+  else if (currPlayer == 2) piece.classList.add("p2");
+  const cell = document.getElementById(`${y}-${x}`);
+  cell.append(piece);
 };
 
 /** endGame: announce game end */
