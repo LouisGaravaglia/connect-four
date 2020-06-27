@@ -3,6 +3,7 @@ import { findSpotForCol, placeInTable, endGame } from "./utilityFunctions.js";
 import { checkForWin } from "./checkForWin.js";
 
 /** handleClick: handle click of column top to play piece */
+let changePlayer = currPlayer;
 
 const handleClick = (evt) => {
   // get x from ID of clicked cell
@@ -22,7 +23,7 @@ const handleClick = (evt) => {
 
   // check for win
   if (checkForWin()) {
-    return endGame(`Player ${currPlayer} won!`);
+    return endGame(`Player ${changePlayer} won!`);
   }
 
   // check for tie
@@ -30,6 +31,12 @@ const handleClick = (evt) => {
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
+  if (changePlayer === 1) changePlayer = 2;
+  else if (changePlayer === 2) changePlayer = 1;
+
+  console.log(changePlayer);
+  // console.log("this is change player " changePlayer);
+  // console.log("this is current player " currPlayer);
 };
 
 export { handleClick };
