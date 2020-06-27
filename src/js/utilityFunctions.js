@@ -1,3 +1,5 @@
+import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
+
 /** findSpotForCol: given column x, return top empty y (null if filled) */
 
 function findSpotForCol(x) {

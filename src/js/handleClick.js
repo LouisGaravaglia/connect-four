@@ -1,3 +1,5 @@
+import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
+
 /** handleClick: handle click of column top to play piece */
 
 function handleClick(evt) {

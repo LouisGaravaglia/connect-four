@@ -1,4 +1,4 @@
-import { HEIGHT, WIDTH } from "./makeBoard.js";
+import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
 
@@ -54,4 +54,4 @@ function checkForWin() {
   }
 }
 
-checkForWin();
+// checkForWin();

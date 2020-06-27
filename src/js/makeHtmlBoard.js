@@ -1,3 +1,5 @@
+import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
+
 function makeHtmlBoard() {
   // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
 
