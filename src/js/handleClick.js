@@ -4,12 +4,14 @@ import { checkForWin } from "./checkForWin.js";
 
 /** handleClick: handle click of column top to play piece */
 
-function handleClick(evt) {
+const handleClick = (evt) => {
   // get x from ID of clicked cell
   const x = +evt.target.id;
+  // console.log(x);
 
   // get next spot in column (if none, ignore click)
   const y = findSpotForCol(x);
+  // console.log(y);
   if (y === null) {
     return;
   }
@@ -28,4 +30,6 @@ function handleClick(evt) {
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
-}
+};
+
+export { handleClick };
