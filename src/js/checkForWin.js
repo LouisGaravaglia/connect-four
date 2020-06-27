@@ -2,7 +2,7 @@ import { HEIGHT, WIDTH, currPlayer, board } from "./makeBoard.js";
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
 
-function checkForWin() {
+const checkForWin = () => {
   function _win(cells) {
     // Check four cells to see if they're all color of current player
     //  - cells: list of four (y, x) cells
@@ -20,8 +20,8 @@ function checkForWin() {
 
   // TODO: read and understand this code. Add comments to help you.
 
-  for (var y = 0; y < HEIGHT; y++) {
-    for (var x = 0; x < WIDTH; x++) {
+  for (let y = 0; y < HEIGHT; y++) {
+    for (let x = 0; x < WIDTH; x++) {
       var horiz = [
         [y, x],
         [y, x + 1],
@@ -52,6 +52,7 @@ function checkForWin() {
       }
     }
   }
-}
+};
 
+export { checkForWin };
 // checkForWin();
