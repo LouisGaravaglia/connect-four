@@ -28,6 +28,11 @@ const handleClick = (evt) => {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
+  board[0].every(function (val) {
+    if (val === true) {
+      alert("woot woot, no more space!");
+    }
+  });
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
