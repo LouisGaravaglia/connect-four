@@ -31,8 +31,7 @@ const handleClick = (evt) => {
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
-  if (currPlayer === 1) currPlayer = 2;
-  else if (currPlayer === 2) currPlayer = 1;
+  currPlayer === 1 ? (currPlayer = 2) : (currPlayer = 1);
 
   console.log(currPlayer);
   // console.log("this is change player " currPlayer);
