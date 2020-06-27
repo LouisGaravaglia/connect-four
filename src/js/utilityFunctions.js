@@ -39,13 +39,14 @@ const placeInTable = (y, x) => {
   else if (currPlayer == 2) piece.classList.add("p2");
   const cell = document.getElementById(`${y}-${x}`);
   cell.append(piece);
-  board[y][x] = true;
+  board[y][x] = currPlayer;
 };
 
 /** endGame: announce game end */
 
 const endGame = (msg) => {
   // TODO: pop up alert message
+  alert(msg);
 };
 
 export { findSpotForCol, placeInTable, endGame };

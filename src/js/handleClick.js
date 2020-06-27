@@ -28,19 +28,13 @@ const handleClick = (evt) => {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
-  board[0].every(function (val) {
-    if (val === true) {
-      alert("woot woot, no more space!");
-    }
-  });
+  const allFillCheck = (val) => val === true;
+
+  if (board[0].every(allFillCheck)) alert("all filled!");
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
   currPlayer === 1 ? (currPlayer = 2) : (currPlayer = 1);
-
-  console.log(currPlayer);
-  // console.log("this is change player " currPlayer);
-  // console.log("this is current player " currPlayer);
 };
 
 export { handleClick, currPlayer };
