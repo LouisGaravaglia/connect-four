@@ -16,6 +16,7 @@ function makeHtmlBoard() {
     const headCell = document.createElement("td");
     // - give that data cell an ID of unique number
     headCell.setAttribute("id", x);
+
     // - add the data cell to the top row
     top.append(headCell);
   }
@@ -32,7 +33,8 @@ function makeHtmlBoard() {
       const cell = document.createElement("td");
       // - add an ID of a unique number for each data cell
       cell.setAttribute("id", `${y}-${x}`);
-      // console.log(cell.attr(id));
+      cell.setAttribute("class", "slot");
+
       // - append those cells to each row
       row.append(cell);
     }
