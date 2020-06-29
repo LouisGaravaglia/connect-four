@@ -1,5 +1,5 @@
 import { HEIGHT, WIDTH, board } from "./makeBoard.js";
-import { findSpotForCol, placeInTable, endGame } from "./utilityFunctions.js";
+import { findSpotForCol, placeInTable } from "./utilityFunctions.js";
 import { checkForWin } from "./checkForWin.js";
 
 // - variable to keep track of who played which piece
@@ -13,6 +13,7 @@ const handleClick = (evt) => {
   // - get next spot in column (if none, ignore click)
   const y = findSpotForCol(x);
   if (y === null) {
+    alert("all full");
     return;
   }
 
@@ -21,7 +22,17 @@ const handleClick = (evt) => {
 
   // - check for win
   if (checkForWin()) {
-    return endGame(`Player ${currPlayer} won!`);
+    const htmlBoard = document.querySelector("#board");
+    htmlBoard.innerHTML = "";
+    const message = document.createElement("h1");
+    message.classList.add("message");
+    message.innerText = `Player ${currPlayer} won!`;
+    const alert = document.querySelector(".alerts");
+    alert.append(message);
+    const timer = setTimeout(function () {
+      alert.innerHTML = "";
+      location.reload();
+    }, 1000);
   }
 
   // - function to use below to see if its a tie
