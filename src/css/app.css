@@ -1,41 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* prevents the whitespace bounce at top and bottom when you scroll */
+  overscroll-behavior: none;
+}
+
 h1 {
   color: green;
   padding-left: 50px;
 }
 
-/* game board table */
-
-#board td {
-  width: 50px;
-  height: 50px;
-  border: solid 1px #666;
+.game-container {
+  position: relative;
 }
 
-/* pieces are div within game table cells: draw as colored circles */
+#game {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 25%);
+}
+
+.slot {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .piece {
+  position: relative;
   margin: 5px;
   width: 80%;
   height: 80%;
   border-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 3s ease-in-out;
 }
 
 .p1 {
-  background-color: red;
+  background-color: #d111f5;
 }
 
 .p2 {
-  background-color: blue;
+  background-color: #1111f5;
 }
 
-/* TODO: make pieces red/blue,  depending on player 1/2 piece */
-
-/* column-top is table row of clickable areas for each column */
-
-#column-top td {
-  border: dashed 1px lightgray;
+#column-top {
+  width: 50px;
+  height: 50px;
+  transition: all 4s ease-in-out;
 }
 
 #column-top td:hover {
-  background-color: gold;
+  background-color: #3153bf;
+  transition: all 0.3s ease-in-out;
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overscroll-behavior: none;
+  transition: all 4s ease-in-out;
+}
+
+.alerts {
+  position: relative;
+}
+
+.message {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  margin: 5px;
+  width: 50%;
+  height: 50%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 100px;
+  font-weight: 200;
+  color: #fff;
+  z-index: 1;
 }
