@@ -37,19 +37,42 @@ const placeInTable = (y, x) => {
   if (currPlayer === 1) piece.classList.add("p1");
   // - conditional to check which styling to apply for player1 v player2 styling
   else if (currPlayer == 2) piece.classList.add("p2");
-
   // - get a hold of the data cell to insert the div/player piece
   const cell = document.getElementById(`${y}-${x}`);
   // - append that piece inside the cell
-
   cell.append(piece);
   // - set the value in the board array to either be 1 or 2 depending on which player played it, this will be intergral in deciding who won
   board[y][x] = currPlayer;
 };
 
-///////////////////////////////////////////END GAME FUNCTION
-const endGame = (msg) => {
-  alert(msg);
+////////////////////////////////////////////////////////////////END GAME IN A TIE FUNCTION
+const endGameTie = () => {
+  const htmlBoard = document.querySelector("#board");
+  htmlBoard.innerHTML = "";
+  const message = document.createElement("h1");
+  message.classList.add("message");
+  message.innerText = `It's a tie!`;
+  const alert = document.querySelector(".alerts");
+  alert.append(message);
+  const timer = setTimeout(function () {
+    alert.innerHTML = "";
+    location.reload();
+  }, 1000);
 };
 
-export { findSpotForCol, placeInTable, endGame };
+////////////////////////////////////////////////////////////////END GAME WITH A winner
+const endGameWinner = () => {
+  const htmlBoard = document.querySelector("#board");
+  htmlBoard.innerHTML = "";
+  const message = document.createElement("h1");
+  message.classList.add("message");
+  message.innerText = `Player ${currPlayer} won!`;
+  const alert = document.querySelector(".alerts");
+  alert.append(message);
+  const timer = setTimeout(function () {
+    alert.innerHTML = "";
+    location.reload();
+  }, 1000);
+};
+
+export { findSpotForCol, placeInTable, endGameTie, endGameWinner };
