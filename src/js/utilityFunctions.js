@@ -45,4 +45,34 @@ const placeInTable = (y, x) => {
   board[y][x] = currPlayer;
 };
 
-export { findSpotForCol, placeInTable };
+////////////////////////////////////////////////////////////////END GAME IN A TIE FUNCTION
+const endGameTie = () => {
+  const htmlBoard = document.querySelector("#board");
+  htmlBoard.innerHTML = "";
+  const message = document.createElement("h1");
+  message.classList.add("message");
+  message.innerText = `It's a tie!`;
+  const alert = document.querySelector(".alerts");
+  alert.append(message);
+  const timer = setTimeout(function () {
+    alert.innerHTML = "";
+    location.reload();
+  }, 1000);
+};
+
+////////////////////////////////////////////////////////////////END GAME WITH A winner
+const endGameWinner = () => {
+  const htmlBoard = document.querySelector("#board");
+  htmlBoard.innerHTML = "";
+  const message = document.createElement("h1");
+  message.classList.add("message");
+  message.innerText = `Player ${currPlayer} won!`;
+  const alert = document.querySelector(".alerts");
+  alert.append(message);
+  const timer = setTimeout(function () {
+    alert.innerHTML = "";
+    location.reload();
+  }, 1000);
+};
+
+export { findSpotForCol, placeInTable, endGameTie, endGameWinner };
